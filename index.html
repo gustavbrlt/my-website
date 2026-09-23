@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gustav Berloty — Cybersécurité pour la sous-traitance industrielle</title>
+<meta name="description" content="Votre donneur d'ordre vous demande des garanties de sécurité ? Diagnostic Fournisseur en 5 jours, à prix fixe, pour les PME industrielles d'Île-de-France. Réponse au questionnaire client et plan d'action réaliste.">
+<meta property="og:title" content="Gustav Berloty — Cybersécurité pour la sous-traitance industrielle">
+<meta property="og:description" content="Diagnostic Fournisseur en 5 jours, à prix fixe : je réponds au questionnaire sécurité de votre client et je vous laisse un plan d'action.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F4F1E9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Gustav Berloty — Conseil en cybersécurité",
+  "description": "Diagnostic de sécurité pour PME industrielles sous-traitantes : réponse aux questionnaires sécurité des donneurs d'ordre et plan d'action.",
+  "telephone": "+33658859789",
+  "email": "gustavberloty@gmail.com",
+  "areaServed": "Île-de-France",
+  "founder": { "@type": "Person", "name": "Gustav Berloty" },
+  "sameAs": ["https://linkedin.com/in/gustav-berloty"]
+}
+</script>
+<style>
+  :root {
+    --paper: #F4F1E9;
+    --paper-2: #EDE8DC;
+    --ink: #15181C;
+    --ink-2: #3E454C;
+    --muted: #5A6169;
+    --rule: #D8D3C7;
+    --accent: #1D4E89;
+    --on-accent: #F4F1E9;
+    --band: #15181C;
+    --band-text: #F4F1E9;
+    --band-muted: #C9C4B8;
+    --band-rule: #3E454C;
+    --focus: #1D4E89;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #15181C;
+      --paper-2: #1C2127;
+      --ink: #F4F1E9;
+      --ink-2: #C9C4B8;
+      --muted: #9A958A;
+      --rule: #2E343B;
+      --accent: #8FB4EA;
+      --on-accent: #15181C;
+      --band: #0E1113;
+      --band-text: #F4F1E9;
+      --band-muted: #C9C4B8;
+      --band-rule: #2E343B;
+      --focus: #8FB4EA;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15181C;
+    --paper-2: #1C2127;
+    --ink: #F4F1E9;
+    --ink-2: #C9C4B8;
+    --muted: #9A958A;
+    --rule: #2E343B;
+    --accent: #8FB4EA;
+    --on-accent: #15181C;
+    --band: #0E1113;
+    --band-text: #F4F1E9;
+    --band-muted: #C9C4B8;
+    --band-rule: #2E343B;
+    --focus: #8FB4EA;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, p, ul { margin: 0; }
+  a { color: inherit; }
+  a:hover { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  img { max-width: 100%; }
+
+  .serif { font-family: "Newsreader", Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -0.015em; }
+  .mono { font-family: "IBM Plex Mono", "Courier New", monospace; }
+
+  .skip {
+    position: absolute; left: 1rem; top: -4rem;
+    background: var(--ink); color: var(--paper); padding: .5rem .9rem; z-index: 100;
+  }
+  .skip:focus { top: 1rem; }
+
+  .wrap { width: min(1180px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding-block: .9rem;
+  }
+  .brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1.2; }
+  .brand .name { font-size: 1.35rem; }
+  .brand .tag { font-size: .8rem; color: var(--muted); margin-top: .15rem; }
+  .brand:hover { color: var(--ink); }
+  .nav { display: flex; align-items: center; gap: 1.6rem; font-size: .95rem; }
+  .nav a { text-decoration: none; }
+  .nav .cta {
+    padding: .6rem 1.05rem; border: 1.5px solid var(--accent); color: var(--accent); font-weight: 600;
+  }
+  .nav .cta:hover { background: var(--accent); color: var(--on-accent); }
+  .nav-toggle {
+    display: none; background: none; border: 1.5px solid var(--ink); color: var(--ink);
+    font: inherit; padding: .5rem .8rem; cursor: pointer; min-height: 44px;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: 1.05rem;
+    padding: .95rem 1.6rem; min-height: 44px;
+  }
+  .btn-primary { background: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { color: var(--on-accent); filter: brightness(1.1); }
+  .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); font-weight: 500; }
+  .btn-outline:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Sections */
+  section { border-bottom: 1px solid var(--rule); }
+  .section { padding-block: 5rem; }
+  .split { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+  .side .num { color: var(--accent); font-size: .85rem; display: block; margin-bottom: .5rem; }
+  .side h2 { font-size: 2.1rem; line-height: 1.15; }
+  .side p { color: var(--ink-2); margin-top: .8rem; }
+  h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+  h3.serif { font-size: 1.4rem; font-weight: 500; }
+  .lead { color: var(--ink-2); }
+
+  /* Hero */
+  .hero { padding-block: 5.5rem 4.5rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+  .hero .kicker { color: var(--accent); font-size: .85rem; margin-bottom: 1.4rem; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 5.1rem); line-height: 1.03; letter-spacing: -0.02em; }
+  .hero .lead { font-size: 1.3rem; margin-top: 1.6rem; max-width: 36rem; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+  .doc {
+    border: 1px solid var(--ink); background: var(--paper-2);
+  }
+  .doc-head { padding: .8rem 1.3rem; border-bottom: 1px solid var(--ink); font-size: .75rem; letter-spacing: .06em; color: var(--muted); }
+  .doc-body { padding: 1.4rem 1.3rem; display: flex; flex-direction: column; gap: 1rem; font-size: .98rem; }
+  .doc-body .q { display: flex; gap: .8rem; color: var(--ink-2); }
+  .doc-body .q span:first-child { color: var(--accent); flex-shrink: 0; width: 2.2rem; }
+  .doc-body .deadline { margin-top: .2rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--ink); font-size: 1.05rem; }
+
+  /* Constat / FAQ grids */
+  .cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+  .cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+  .cell { padding-top: 1rem; border-top: 1px solid var(--ink); }
+  .cell p { color: var(--ink-2); margin-top: .6rem; }
+
+  /* Offre */
+  .specs { margin-top: 1.5rem; padding-top: 1.3rem; border-top: 1px solid var(--ink); font-size: .95rem; }
+  .specs div { display: flex; justify-content: space-between; gap: 1.5rem; padding: .35rem 0; align-items: baseline; }
+  .specs dt { color: var(--muted); max-width: 60%; }
+  .specs dd { margin: 0; text-align: right; }
+  .specs .price { color: var(--accent); font-weight: 500; }
+  .steps { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+  .step { display: grid; grid-template-columns: 3.4rem 240px 1fr; gap: 1.6rem; padding: 1.4rem 0; border-top: 1px solid var(--rule); }
+  .step:first-child { border-top: 0; }
+  .step .n { color: var(--accent); font-size: .9rem; padding-top: .3rem; }
+  .step p { color: var(--ink-2); }
+  .deliver { margin-top: 2.8rem; padding: 2rem 2.2rem; background: var(--paper-2); border: 1px solid var(--ink); }
+  .deliver h3 { font-size: 1.6rem; margin-bottom: 1.2rem; }
+  .deliver .cols-2 { gap: 1.4rem 3rem; }
+  .deliver p { color: var(--ink-2); }
+  .deliver strong { color: var(--ink); font-weight: 600; }
+
+  /* Périmètre */
+  .scope h3 { font-size: .85rem; letter-spacing: .06em; font-weight: 500; }
+  .scope .in { border-top: 2px solid var(--accent); padding-top: 1rem; }
+  .scope .in h3 { color: var(--accent); }
+  .scope .out { border-top: 2px solid var(--ink); padding-top: 1rem; }
+  .scope .out h3 { color: var(--muted); }
+  .scope ul { margin-top: 1rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: .8rem; color: var(--ink-2); }
+
+  /* Suite */
+  .suite .cell { border-top-color: var(--ink); }
+  .suite .tarif { color: var(--accent); font-size: .85rem; margin-top: .8rem; }
+
+  /* Profil */
+  .rows { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+  .row { display: grid; grid-template-columns: 200px 1fr; gap: 1.6rem; padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+  .row:first-child { border-top: 0; }
+  .row .label { color: var(--muted); font-size: .85rem; padding-top: .35rem; }
+  .row p { color: var(--ink-2); margin-top: .5rem; }
+
+  /* Contact */
+  .contact { background: var(--band); color: var(--band-text); border-bottom: 0; }
+  .contact .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: center; padding-block: 6rem; }
+  .contact h2 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.02; letter-spacing: -0.02em; }
+  .contact .lead { color: var(--band-muted); font-size: 1.25rem; margin-top: 1.4rem; max-width: 32rem; }
+  .contact .note { color: var(--band-muted); font-size: .9rem; margin-top: 1.4rem; opacity: .8; }
+  .card { border: 1px solid var(--band-rule); display: flex; flex-direction: column; }
+  .card a.line { display: flex; flex-direction: column; gap: .3rem; padding: 1.4rem 1.8rem; border-bottom: 1px solid var(--band-rule); text-decoration: none; color: var(--band-text); }
+  .card a.line:hover { color: var(--band-text); background: rgba(255,255,255,.04); }
+  .card .k { font-size: .75rem; letter-spacing: .06em; color: var(--band-muted); opacity: .8; }
+  .card .v { font-size: 1.25rem; overflow-wrap: anywhere; }
+  .card .btn { margin: 1.4rem 1.8rem; text-align: center; background: var(--band-text); color: var(--band); }
+  .card .btn:hover { color: var(--band); filter: brightness(.95); }
+
+  /* Footer */
+  .site-footer { padding-block: 1.8rem 2.2rem; border-top: 1px solid var(--rule); font-size: .9rem; color: var(--muted); }
+  .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
+  .site-footer a { text-decoration: none; }
+  .legal { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: .85rem; line-height: 1.55; color: var(--muted); }
+  .legal p + p { margin-top: .5rem; }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .split { grid-template-columns: 1fr; gap: 2.2rem; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 3rem; }
+    .contact .wrap { grid-template-columns: 1fr; gap: 3rem; padding-block: 4.5rem; }
+    .cols-3 { grid-template-columns: 1fr; gap: 1.8rem; }
+    .step { grid-template-columns: 3rem 1fr; }
+    .step p { grid-column: 2; }
+    .row { grid-template-columns: 1fr; gap: .4rem; }
+  }
+  @media (max-width: 720px) {
+    .section { padding-block: 3.5rem; }
+    .hero { padding-block: 3.5rem 3rem; }
+    .cols-2 { grid-template-columns: 1fr; gap: 2rem; }
+    .deliver { padding: 1.5rem 1.3rem; }
+    .side h2 { font-size: 1.8rem; }
+    .nav { display: none; }
+    .nav.open {
+      display: flex; flex-direction: column; align-items: stretch; gap: 0;
+      position: absolute; left: 0; right: 0; top: 100%;
+      background: var(--paper); border-bottom: 2px solid var(--ink);
+    }
+    .nav.open a { padding: 1rem 1.25rem; border-top: 1px solid var(--rule); min-height: 44px; }
+    .nav.open .cta { border: 0; border-top: 1px solid var(--rule); background: var(--accent); color: var(--on-accent); }
+    .nav-toggle { display: inline-block; }
+    .brand .tag { display: none; }
+    .hero .actions .btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Gustav Berloty, retour en haut de page">
+      <span class="name serif">Gustav Berloty</span>
+      <span class="tag">Conseil en cybersécurité pour la sous-traitance industrielle</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#offre">Le diagnostic</a>
+      <a href="#perimetre">Périmètre</a>
+      <a href="#suite">Après</a>
+      <a href="#profil">Qui je suis</a>
+      <a class="cta" href="#contact">Prendre rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker mono">PME industrielles de 50 à 250 salariés, Île-de-France</p>
+      <h1 class="serif">Votre client vous demande des garanties de sécurité&nbsp;?</h1>
+      <p class="lead">Je réponds au questionnaire de votre donneur d'ordre et je vous laisse un plan d'action réaliste. Cinq jours, prix fixe, sans embaucher de responsable sécurité.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">Demander un rappel</a>
+        <a class="btn btn-outline" href="#offre">Voir le déroulé</a>
+      </div>
+    </div>
+    <aside class="doc" aria-label="Extrait d'un questionnaire fournisseur type">
+      <div class="doc-head mono">Questionnaire fournisseur, extrait</div>
+      <div class="doc-body">
+        <div class="q"><span class="mono">Q7</span><span>Disposez-vous d'un processus documenté de gestion des correctifs&nbsp;?</span></div>
+        <div class="q"><span class="mono">Q12</span><span>Les accès distants sont-ils protégés par une double authentification&nbsp;?</span></div>
+        <div class="q"><span class="mono">Q19</span><span>Vos sauvegardes font-elles l'objet de tests de restauration&nbsp;?</span></div>
+        <div class="q"><span class="mono">Q26</span><span>Le réseau de production est-il séparé du réseau bureautique&nbsp;?</span></div>
+        <p class="deadline serif">À retourner sous 3 semaines. Reconduction du contrat conditionnée.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="pourquoi">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">I</span>
+      <h2 class="serif">Pourquoi ce questionnaire arrive maintenant</h2>
+    </div>
+    <div class="cols-3">
+      <div class="cell">
+        <h3>La réglementation descend la chaîne</h3>
+        <p>Les grands groupes soumis à la directive NIS2 doivent obtenir des garanties de leurs fournisseurs. Vous n'êtes peut-être pas concerné directement, mais vos clients le sont.</p>
+      </div>
+      <div class="cell">
+        <h3>Personne en interne n'a le temps</h3>
+        <p>L'informatique est souvent portée par une personne qui a déjà un autre métier, épaulée par un infogérant. Répondre à quarante questions techniques n'entre pas dans son planning.</p>
+      </div>
+      <div class="cell">
+        <h3>Une réponse bâclée se retourne contre vous</h3>
+        <p>Cocher « oui » partout vous expose à un audit client que vous ne passerez pas. Cocher « non » partout inquiète l'acheteur. Il faut une réponse exacte, assortie d'un plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="offre">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">II</span>
+      <h2 class="serif">Le Diagnostic Fournisseur</h2>
+      <dl class="specs mono">
+        <div><dt>Durée</dt><dd>5 jours de travail</dd></div>
+        <div><dt>Du lancement à la restitution</dt><dd>3 semaines</dd></div>
+        <div><dt>Démarrage</dt><dd>sous 2 semaines</dd></div>
+        <div><dt>Forfait</dt><dd class="price">2 500 € HT</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="steps">
+        <div class="step">
+          <span class="n mono">01</span>
+          <h3 class="serif">Ce qui est exposé</h3>
+          <p>Inventaire de vos points d'entrée depuis Internet : site web, messagerie, accès distants, serveurs publiés.</p>
+        </div>
+        <div class="step">
+          <span class="n mono">02</span>
+          <h3 class="serif">Contrôle technique</h3>
+          <p>Chiffrement TLS, en-têtes et méthodes HTTP, correctifs manquants, vulnérabilités connues dans les composants utilisés.</p>
+        </div>
+        <div class="step">
+          <span class="n mono">03</span>
+          <h3 class="serif">Les fondamentaux</h3>
+          <p>Comptes et droits, double authentification, sauvegardes et test de restauration, journalisation, séparation du réseau de production.</p>
+        </div>
+        <div class="step">
+          <span class="n mono">04</span>
+          <h3 class="serif">Mise en regard du ReCyF</h3>
+          <p>Comparaison avec les objectifs de sécurité du référentiel publié par l'ANSSI, qui préfigure les obligations NIS2.</p>
+        </div>
+      </div>
+      <div class="deliver">
+        <h3 class="serif">Ce que vous recevez</h3>
+        <div class="cols-2">
+          <p><strong>Le questionnaire de votre client rempli</strong>, question par question, avec les justificatifs correspondants.</p>
+          <p><strong>Un rapport d'une quinzaine de pages</strong>, risques classés du plus grave au moins grave, en français lisible par un dirigeant.</p>
+          <p><strong>Un plan d'action à 90 jours</strong>, chiffré en charge, distinguant ce qui se traite en interne de ce qui demande un prestataire.</p>
+          <p><strong>Une restitution d'une heure</strong> avec votre direction, pour arbitrer les priorités et le budget.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section scope" id="perimetre">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">III</span>
+      <h2 class="serif">Ce que je fais, et ce que je ne fais pas</h2>
+      <p>Un périmètre écrit à l'avance évite les malentendus, et surtout les mauvaises surprises en production.</p>
+    </div>
+    <div class="cols-2">
+      <div class="in">
+        <h3 class="mono">Inclus dans le diagnostic</h3>
+        <ul>
+          <li>Revue du parc à partir de vos consoles d'administration : annuaire, antivirus, déploiement des correctifs, politiques de groupe.</li>
+          <li>Examen détaillé de cinq postes représentatifs : bureautique, bureau d'études, comptabilité, portable nomade, poste d'atelier.</li>
+          <li>Revue de l'architecture réseau et des règles de pare-feu, y compris les accès de télémaintenance des constructeurs.</li>
+          <li>Entretiens avec votre responsable informatique et votre infogérant.</li>
+        </ul>
+      </div>
+      <div class="out">
+        <h3 class="mono">Hors périmètre</h3>
+        <ul>
+          <li>Aucun test actif sur vos systèmes de production industrielle : machines-outils et automates sont étudiés sur plan, jamais sollicités.</li>
+          <li>Aucun test d'intrusion sans autorisation écrite et signée, définissant cibles et créneaux.</li>
+          <li>Pas d'infogérance, pas de support utilisateur, pas d'astreinte : je ne remplace pas votre prestataire informatique.</li>
+          <li>Pas de certification ISO 27001 : je prépare le terrain, seul un organisme accrédité certifie.</li>
+          <li>Pas de réponse à une attaque en cours. En cas d'incident, contactez <a href="https://www.cybermalveillance.gouv.fr">Cybermalveillance.gouv.fr</a> et un prestataire de réponse à incident.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section suite" id="suite">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">IV</span>
+      <h2 class="serif">Après le diagnostic</h2>
+      <p>Deux prolongements possibles, jamais imposés.</p>
+    </div>
+    <div class="cols-2">
+      <div class="cell">
+        <h3 class="serif">Remédiation</h3>
+        <p>Je mets en œuvre le plan d'action avec vos équipes et votre infogérant : durcissement des serveurs, double authentification, reprise des sauvegardes, cloisonnement réseau, sécurisation de votre chaîne de développement.</p>
+        <p class="tarif mono">Facturation à la journée, 500 € HT</p>
+      </div>
+      <div class="cell">
+        <h3 class="serif">Contrôle continu</h3>
+        <p>J'installe un outil de vérification automatique qui rejoue chaque mois les contrôles techniques du diagnostic et vous envoie un rapport. Vous voyez les écarts apparaître au lieu de les découvrir au prochain questionnaire. Chaque mois : l'exécution des contrôles, le rapport, et une demi-heure d'échange pour en tirer les décisions.</p>
+        <p class="tarif mono">Mise en place 500 € HT, puis 200 € HT par mois, sans engagement de durée</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="profil">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">V</span>
+      <h2 class="serif">Qui je suis</h2>
+      <p>Ingénieur en cybersécurité formé à l'EPITA, consultant indépendant basé à Paris. J'interviens en Île-de-France et à distance.</p>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <span class="label mono">Dassault Systèmes</span>
+        <div>
+          <h3 class="serif">Trois ans sur une plateforme industrielle critique</h3>
+          <p>Infrastructure et cybersécurité sur la plateforme 3DEXPERIENCE : développement d'un outil de durcissement et de contrôle automatisé, installation et test de la plateforme en environnement client, documentation de référence sur les normes ISO 27001, 27002, 27017 et 27018 pour les équipes avant-vente.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label mono">EPITA, 2026</span>
+        <div>
+          <h3 class="serif">Une formation d'ingénieur spécialisée</h3>
+          <p>Spécialité cybersécurité : supervision et détection, analyse de malwares et investigation numérique, tests d'intrusion, sécurité du développement, cryptographie. Cofondateur du club Rust de l'EPITA.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label mono">Rust, Java, Python</span>
+        <div>
+          <h3 class="serif">Je code les outils que j'utilise</h3>
+          <p>Mes contrôles techniques ne sortent pas d'un logiciel générique : je développe des vérifications adaptées à votre environnement, ce qui rend le contrôle continu possible sans licence coûteuse.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions">
+  <div class="wrap split">
+    <div class="side">
+      <span class="num mono">VI</span>
+      <h2 class="serif">Les questions qu'on me pose</h2>
+    </div>
+    <div class="cols-3">
+      <div class="cell">
+        <h3 class="serif">Allez-vous toucher à mes machines de production&nbsp;?</h3>
+        <p>Non. Aucun scan, aucune mise à jour, aucun redémarrage sur un automate ou un poste de pilotage. Cette partie est étudiée par entretien et par lecture des configurations.</p>
+      </div>
+      <div class="cell">
+        <h3 class="serif">Tous mes postes informatiques vont-ils être testés un par un&nbsp;?</h3>
+        <p>Non, et ce n'est pas ce que demande votre client. Il veut savoir si vous avez un processus. Je l'évalue depuis vos consoles d'administration, avec cinq postes vérifiés en détail.</p>
+      </div>
+      <div class="cell">
+        <h3 class="serif">Que devient mon prestataire informatique&nbsp;?</h3>
+        <p>Il reste en place. Je ne fais pas d'infogérance : je travaille avec lui, et le plan d'action précise ce qui relève de son contrat actuel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="serif">Parlons-en vingt minutes.</h2>
+      <p class="lead">Un appel de vingt minutes suffit pour savoir si le diagnostic répond à votre situation. Vous n'avez rien à préparer, et rien à m'envoyer. Si ce n'est pas le cas, je vous le dis et je vous oriente.</p>
+      <p class="note mono">Réponse sous 48 h ouvrées. Île-de-France et à distance.</p>
+    </div>
+    <div class="card">
+      <a class="line" href="mailto:gustavberloty@gmail.com?subject=Demande%20de%20rappel">
+        <span class="k mono">Email</span>
+        <span class="v">gustavberloty@gmail.com</span>
+      </a>
+      <a class="line" href="tel:+33658859789">
+        <span class="k mono">Téléphone</span>
+        <span class="v">+33 6 58 85 97 89</span>
+      </a>
+      <a class="line" href="https://linkedin.com/in/gustav-berloty">
+        <span class="k mono">LinkedIn</span>
+        <span class="v">in/gustav-berloty</span>
+      </a>
+      <a class="btn" href="mailto:gustavberloty@gmail.com?subject=Demande%20de%20rappel">Demander un rappel</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Gustav Berloty. Conseil en cybersécurité pour la sous-traitance industrielle.</span>
+    <a href="#mentions">Mentions légales</a>
+  </div>
+  <div class="wrap legal" id="mentions">
+    <p>Éditeur du site : Gustav Berloty, entrepreneur individuel, 9 rue Victorien Sardou 75016 Paris, SIRET 109 687 178 00011. Directeur de la publication : Gustav Berloty. Contact : gustavberloty@gmail.com.</p>
+    <p>Hébergement : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Assurance responsabilité civile professionnelle : [ASSUREUR ET NUMÉRO DE CONTRAT]. TVA : non applicable, article 293 B du CGI.</p>
+    <p>Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle. Les échanges par email et téléphone sont utilisés uniquement pour répondre à votre demande.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.textContent = open ? 'Fermer' : 'Menu';
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.textContent = 'Menu';
+        }
+      });
+    }
+    var y = document.getElementById('year');
+    if (y) { y.textContent = String(new Date().getFullYear()); }
+  })();
+</script>
+</body>
+</html>
