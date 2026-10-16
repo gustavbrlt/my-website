@@ -3,6 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function () {
+  var d = document.documentElement;
+  if (!document.fonts || !document.fonts.load) return;
+  d.classList.add('fonts-loading');
+  var done = false;
+  function show() { if (done) return; done = true; d.classList.remove('fonts-loading'); }
+  setTimeout(show, 1500);
+  Promise.all([
+    document.fonts.load('500 1em "Newsreader"'),
+    document.fonts.load('400 1em "IBM Plex Sans"'),
+    document.fonts.load('500 1em "IBM Plex Sans"'),
+    document.fonts.load('600 1em "IBM Plex Sans"'),
+    document.fonts.load('400 1em "IBM Plex Mono"'),
+    document.fonts.load('500 1em "IBM Plex Mono"')
+  ]).then(show, show);
+})();
+</script>
 <title>Gustav Berloty — Cybersécurité pour la sous-traitance industrielle</title>
 <meta name="description" content="Votre donneur d'ordre vous demande des garanties de sécurité ? Diagnostic Fournisseur en 5 jours, à prix fixe, pour les PME industrielles d'Île-de-France. Réponse au questionnaire client et plan d'action réaliste.">
 <meta property="og:title" content="Gustav Berloty — Cybersécurité pour la sous-traitance industrielle">
@@ -99,6 +117,8 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  body { transition: opacity .15s ease; }
+  .fonts-loading body { opacity: 0; }
   h1, h2, h3, p, ul { margin: 0; }
   a { color: inherit; }
   a:hover { color: var(--accent); }
